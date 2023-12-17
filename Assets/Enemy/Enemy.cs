@@ -10,6 +10,10 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 
 {
+    
+    [HideInInspector]
+
+public Animator Animator;
     private Player _player;
    private void Start()
 
@@ -27,7 +31,13 @@ Player.OnPowerUpStop += StopRetreating;
 
 }
       
+    public void Dead()
 
+{
+
+Destroy(gameObject);
+
+}
     private void StartRetreating()
 
 {
@@ -91,7 +101,7 @@ _currentState.EnterState(this);
 private void Awake()
 
 {
-
+Animator = GetComponent<Animator>();
 _currentState = PatrolState;
 
 _currentState.EnterState(this);
@@ -114,5 +124,23 @@ _currentState.UpdateState(this);
 }
 
 }
+private void OnCollisionEnter(Collision collision)
 
+{
+
+if(_currentState != RetreatState)
+
+{
+
+if (collision.gameObject.CompareTag("Player"))
+
+{
+
+collision.gameObject.GetComponent<Player>().Dead();
+
+}
+
+}
+
+}
 }
