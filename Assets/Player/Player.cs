@@ -1,5 +1,5 @@
 using System.Collections;
-
+using System;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -8,6 +8,56 @@ using UnityEngine;
 public class Player : MonoBehaviour
 
 {
+    public Action OnPowerUpStart;
+    public Action OnPowerUpStop;
+
+    private Coroutine _powerupCoroutine;
+    [SerializeField]
+
+private float _powerupDuration;
+  private IEnumerator StartPowerUp()
+
+{
+
+if (OnPowerUpStart != null)
+
+{
+
+OnPowerUpStart();
+
+}
+
+yield return new WaitForSeconds(_powerupDuration);
+
+if (OnPowerUpStop != null)
+
+{
+
+OnPowerUpStop();
+
+}
+
+}
+
+    [SerializeField]
+
+
+
+   public void PickPowerUp()
+
+{
+
+if (_powerupCoroutine != null)
+
+{
+
+StopCoroutine(_powerupCoroutine);
+
+}
+
+_powerupCoroutine = StartCoroutine(StartPowerUp());
+
+}
 
 private Rigidbody _rigidBody;
 
@@ -30,6 +80,7 @@ _rigidBody = GetComponent<Rigidbody>();
 private void Start()
 
 {
+    
 
 Cursor.lockState = CursorLockMode.Locked;
 

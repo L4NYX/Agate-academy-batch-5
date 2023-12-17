@@ -1,4 +1,5 @@
-public enum PickableType
+
+    public enum PickableType
 
 {
 

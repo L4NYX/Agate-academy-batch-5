@@ -5473,6 +5473,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUp (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4732072576202131676, guid: d623c9ed65180e04b862cefc5d8115c4, type: 3}
+      propertyPath: ItemType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732072576202131676, guid: d623c9ed65180e04b862cefc5d8115c4, type: 3}
+      propertyPath: _pickableType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5561620441174963467, guid: d623c9ed65180e04b862cefc5d8115c4, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -5930,7 +5938,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895262232}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3497469, y: -0.000000022796698, z: 0.000000008510565, w: 0.9368443}
+  m_LocalRotation: {x: 0.3497469, y: 0.00000002279669, z: -0.000000008510563, w: 0.9368443}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6256,7 +6264,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.34974688, y: -0.00000003604475, z: 0.000000013456385, w: 0.9368443}
+  m_LocalRotation: {x: 0.34974688, y: 0.000000036044742, z: -0.000000013456383, w: 0.9368443}
   m_LocalPosition: {x: 0, y: 3.62, z: -3.8982828}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7951,7 +7959,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052799353}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3326936, y: 0.00000001622622, z: -0.0000000057244542, w: 0.943035}
+  m_LocalRotation: {x: 0.3326936, y: -0.000000016226219, z: 0.0000000057244534, w: 0.943035}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -38371,6 +38379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed785f97d0ce4c945a2811dab9ac5c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _powerupDuration: 5
   _speed: 500
   _camera: {fileID: 963194228}
 --- !u!54 &1097039368
@@ -40676,6 +40685,8 @@ MonoBehaviour:
   - {fileID: 238872470}
   - {fileID: 740870041}
   - {fileID: 1212051343}
+  ChaseDistance: 3
+  Player: {fileID: 1097039367}
   NavMeshAgent: {fileID: 0}
 --- !u!136 &1516191172
 CapsuleCollider:
@@ -40775,7 +40786,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -44945,6 +44956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 956d4314385650247acafc52a0020191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 1097039367}
 --- !u!4 &1813680808
 Transform:
   m_ObjectHideFlags: 0
@@ -47195,6 +47207,14 @@ PrefabInstance:
     - target: {fileID: 4662102887886420951, guid: d623c9ed65180e04b862cefc5d8115c4, type: 3}
       propertyPath: m_Name
       value: PowerUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732072576202131676, guid: d623c9ed65180e04b862cefc5d8115c4, type: 3}
+      propertyPath: ItemType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732072576202131676, guid: d623c9ed65180e04b862cefc5d8115c4, type: 3}
+      propertyPath: _pickableType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5561620441174963467, guid: d623c9ed65180e04b862cefc5d8115c4, type: 3}
       propertyPath: m_Mesh

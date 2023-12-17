@@ -11,6 +11,8 @@ public class Pickable : MonoBehaviour
 
 {
 
+    public PickableType ItemType;
+
 [SerializeField]
 
 private PickableType _pickableType;
