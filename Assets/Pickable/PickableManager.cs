@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PickableManager : MonoBehaviour
 {
@@ -20,7 +20,7 @@ private ScoreManager _scoreManager;
 
     private void InitPickableList()
     {
-        
+         _pickableList.Clear();
        
        Pickable[] pickableObjects = GameObject.FindObjectsOfType<Pickable>();
 
@@ -58,6 +58,11 @@ _scoreManager.AddScore(1);
 
     if (_pickableList.Count <= 0)
     {
+       
+
+Cursor.lockState = CursorLockMode.None;
+Cursor.visible = true;
+        SceneManager.LoadScene("WinScreen");
         Debug.Log("Win");
         // Trigger a win condition or any action you need upon collecting all pickable objects
     }

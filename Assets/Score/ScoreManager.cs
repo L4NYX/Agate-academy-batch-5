@@ -7,7 +7,6 @@ public class ScoreManager : MonoBehaviour
 
     
     [SerializeField]
-
 private TMP_Text _scoreText;
 
 private int _score;
@@ -15,13 +14,9 @@ private int _score;
 private int _maxScore;
 
 public void SetMaxScore(int value)
-
 {
-
-_maxScore = value;
-
-UpdateUI();
-
+    _maxScore = value;
+    UpdateUI(); // Memastikan pembaruan UI terjadi setiap kali nilai maksimum skor diubah
 }
 
  
@@ -39,7 +34,7 @@ public void UpdateUI()
 
 {
 
-_scoreText.text = "Score: " + _score + " / " + _maxScore;
+_scoreText.text = "Score: " + _score + " / " + 77;
 
 }
     // Start is called before the first frame update

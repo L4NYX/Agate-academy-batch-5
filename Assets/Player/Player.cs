@@ -2,7 +2,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 
@@ -125,7 +125,9 @@ transform.position = _respawnPoint.position;
 else
 
 {
-
+  Cursor.lockState = CursorLockMode.None;
+Cursor.visible = true;
+SceneManager.LoadScene("LoseScreen");
 _health = 0;
 
 Debug.Log("Lose");
